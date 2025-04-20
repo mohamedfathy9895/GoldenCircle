@@ -1,0 +1,315 @@
+/* 
+* Golden Circle: Purpose to Impact - Main Styles
+* Main styling for the game website
+*/
+
+:root {
+    /* Primary color palette */
+    --primary-color: #1a237e;
+    --primary-light: #534bae;
+    --primary-dark: #000051;
+    
+    /* Secondary color palette */
+    --secondary-color: #ff6f00;
+    --secondary-light: #ffa040;
+    --secondary-dark: #c43e00;
+    
+    /* Game zone colors */
+    --startup-color: #26a69a;
+    --growth-color: #66bb6a;
+    --challenge-color: #ffb74d;
+    --expansion-color: #7e57c2;
+    --legacy-color: #ef5350;
+    
+    /* UI colors */
+    --background-color: #f5f5f7;
+    --card-background: #ffffff;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --text-light: #ffffff;
+    
+    /* Border and shadows */
+    --border-radius: 8px;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.5rem;
+    
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-dark);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: var(--spacing-xl);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Header and Navigation */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-color);
+}
+
+.tagline {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(26, 35, 126, 0.1);
+}
+
+/* Game Overview Section */
+.game-overview {
+    margin-bottom: var(--spacing-xl);
+}
+
+.game-specs {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+}
+
+.spec {
+    flex: 1;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.spec h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.difficulty-modes {
+    margin-top: var(--spacing-lg);
+}
+
+.modes {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.mode {
+    flex: 1;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    background-color: var(--card-background);
+}
+
+.mode:nth-child(1) {
+    border-top: 4px solid var(--startup-color);
+}
+
+.mode:nth-child(2) {
+    border-top: 4px solid var(--growth-color);
+}
+
+.mode:nth-child(3) {
+    border-top: 4px solid var(--legacy-color);
+}
+
+/* Section styling */
+section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+section h2 {
+    margin-top: 0;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary-light);
+}
+
+/* Button styles */
+button {
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-light);
+}
+
+button.active {
+    background-color: var(--secondary-color);
+}
+
+/* Card navigation */
+.card-navigation, .rules-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.card-nav-btn, .rule-tab {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Card display area */
+.card-display, .rules-content, .simulation-container {
+    min-height: 400px;
+    padding: var(--spacing-md);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-nav {
+        margin-top: var(--spacing-md);
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .game-specs, .modes {
+        flex-direction: column;
+    }
+    
+    .card-navigation, .rules-tabs {
+        overflow-x: auto;
+        padding-bottom: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .card-nav-btn, .rule-tab {
+        min-width: 100px;
+        padding: var(--spacing-sm) var(--spacing-xs);
+    }
+}

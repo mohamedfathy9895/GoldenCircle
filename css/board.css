@@ -1,0 +1,257 @@
+/* 
+* Golden Circle: Purpose to Impact - Board Styles
+* Styling for the game board visualization
+*/
+
+.board-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.game-board {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain aspect ratio */
+    position: relative;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+/* Golden circle center */
+.golden-center {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 40%;
+    left: 40%;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-weight: bold;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.golden-center span {
+    transform: rotate(-45deg);
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+/* Game path */
+.game-path {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Zones */
+.zone {
+    position: absolute;
+    transform-origin: center;
+    border-radius: 50%;
+}
+
+.zone-startup {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 50%);
+    background-color: var(--startup-color);
+}
+
+.zone-growth {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 50%);
+    background-color: var(--growth-color);
+}
+
+.zone-challenge {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 50% 100%, 0 100%, 50% 50%);
+    background-color: var(--challenge-color);
+}
+
+.zone-expansion {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 0 100%, 0 50%, 50% 50%);
+    background-color: var(--expansion-color);
+}
+
+.zone-legacy {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 0 50%, 0 0, 50% 0, 50% 50%);
+    background-color: var(--legacy-color);
+}
+
+/* Game spaces */
+.space {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    transform: translate(-50%, -50%);
+}
+
+.space.why-space {
+    background-color: #e3f2fd;
+    border: 2px solid #2196f3;
+}
+
+.space.how-space {
+    background-color: #e8f5e9;
+    border: 2px solid #4caf50;
+}
+
+.space.what-space {
+    background-color: #fff3e0;
+    border: 2px solid #ff9800;
+}
+
+.space.crisis-space {
+    background-color: #ffebee;
+    border: 2px solid #f44336;
+}
+
+.space.market-space {
+    background-color: #e0f7fa;
+    border: 2px solid #00bcd4;
+}
+
+.space.milestone {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--secondary-color);
+    background-color: #fff8e1;
+    z-index: 6;
+}
+
+/* Space labels (for accessibility) */
+.space span {
+    display: none;
+}
+
+.space:hover span {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    width: max-content;
+    z-index: 20;
+}
+
+/* Spiral path visualization */
+.spiral-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 3;
+    stroke-dasharray: 5, 3;
+    z-index: 2;
+}
+
+/* Board legend */
+.board-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-md);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: var(--spacing-sm);
+}
+
+/* Board controls */
+.board-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+    gap: var(--spacing-md);
+}
+
+.board-controls button {
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .board-container {
+        max-width: 500px;
+    }
+    
+    .space {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+    
+    .space.milestone {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-container {
+        max-width: 300px;
+    }
+    
+    .space {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+    }
+    
+    .space.milestone {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .board-legend {
+        font-size: 0.8rem;
+    }
+}

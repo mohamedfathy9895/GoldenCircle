@@ -1,0 +1,378 @@
+/* 
+* Golden Circle: Purpose to Impact - Card Styles
+* Styling for all card types 
+*/
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2.5/3.5; /* Standard card ratio */
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Card header */
+.card-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Card content structure */
+.card-title {
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--text-secondary);
+}
+
+.card-content {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content p {
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.card-content ul {
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
+    font-size: 0.9rem;
+}
+
+/* Card type specific styling */
+.why-card .card-header {
+    background-color: #2196f3;
+}
+
+.how-card .card-header {
+    background-color: #4caf50;
+}
+
+.what-card .card-header {
+    background-color: #ff9800;
+}
+
+.crisis-card .card-header {
+    background-color: #f44336;
+}
+
+.market-card .card-header {
+    background-color: #00bcd4;
+}
+
+.opportunity-card .card-header {
+    background-color: #9c27b0;
+}
+
+.pivot-card .card-header {
+    background-color: #ff5722;
+}
+
+/* WHY Component specific styles */
+.why-card .level-badge {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2196f3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Symbol row for card synergies */
+.symbol-row {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-sm) 0;
+    justify-content: center;
+}
+
+.symbol {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.symbol-i { background-color: #2196f3; } /* Innovation */
+.symbol-c { background-color: #4caf50; } /* Collaboration */
+.symbol-s { background-color: #ff9800; } /* Service */
+.symbol-t { background-color: #9c27b0; } /* Trust */
+.symbol-d { background-color: #f44336; } /* Disruption */
+
+/* Resource icons */
+.resource-cost {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.resource {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.resource-staff::before {
+    content: "👥";
+    margin-right: 2px;
+}
+
+.resource-capital::before {
+    content: "💰";
+    margin-right: 2px;
+}
+
+.resource-brand::before {
+    content: "🔊";
+    margin-right: 2px;
+}
+
+.resource-innovation::before {
+    content: "💡";
+    margin-right: 2px;
+}
+
+/* Crisis card specific styling */
+.crisis-card .card-content {
+    background-color: rgba(244, 67, 54, 0.05);
+}
+
+.crisis-effect {
+    background-color: rgba(244, 67, 54, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    margin-top: auto;
+    font-weight: 500;
+}
+
+.crisis-protection {
+    font-size: 0.8rem;
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* WHAT card styling */
+.what-card .market-impact {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 152, 0, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    margin-top: auto;
+}
+
+.impact-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: 2px;
+}
+
+.impact-market::before {
+    content: "📊";
+    margin-right: 4px;
+}
+
+.impact-trust::before {
+    content: "🤝";
+    margin-right: 4px;
+}
+
+.impact-innovation::before {
+    content: "🔍";
+    margin-right: 4px;
+}
+
+/* HOW card styling */
+.how-card .strategy-effect {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    margin-top: auto;
+}
+
+.strategy-type {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-sm);
+}
+
+.type-short-term {
+    background-color: #ff9800;
+    color: white;
+}
+
+.type-long-term {
+    background-color: #4caf50;
+    color: white;
+}
+
+.type-adaptive {
+    background-color: #03a9f4;
+    color: white;
+}
+
+.type-collaborative {
+    background-color: #9c27b0;
+    color: white;
+}
+
+.type-disruptive {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Opportunity card styling */
+.opportunity-card .card-content {
+    background-color: rgba(156, 39, 176, 0.05);
+}
+
+/* Pivot card styling */
+.pivot-card .card-content {
+    background-color: rgba(255, 87, 34, 0.05);
+}
+
+.pivot-card p strong {
+    color: #d84315;
+}
+
+.eligibility-notice {
+    background-color: rgba(255, 87, 34, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Card preview modal */
+.card-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.card-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    width: 350px;
+    max-width: 90%;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.card-modal.active .modal-card {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .card-content p, .card-content ul {
+        font-size: 0.8rem;
+    }
+    
+    .symbol {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+}

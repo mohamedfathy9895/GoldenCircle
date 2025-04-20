@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Circle: Purpose to Impact - Board Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <h1>Golden Circle: Purpose to Impact</h1>
+                <p class="tagline">A Purpose-Driven Business Strategy Board Game</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#game-overview" class="nav-link">Game Overview</a></li>
+                    <li><a href="#board" class="nav-link">Game Board</a></li>
+                    <li><a href="#cards" class="nav-link">Cards</a></li>
+                    <li><a href="#rules" class="nav-link">Rules</a></li>
+                    <li><a href="#simulation" class="nav-link">Game Simulation</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="game-overview" class="game-overview">
+                <h2>Game Concept</h2>
+                <p>A strategy board game where players lead fictional companies on a journey to define their "WHY", implement impactful strategies (HOW), and develop meaningful offerings (WHAT). Success comes from alignment with purpose, navigating crises, and mastering business strategy.</p>
+                
+                <div class="game-specs">
+                    <div class="spec">
+                        <h3>Players</h3>
+                        <p>2-5 players</p>
+                    </div>
+                    <div class="spec">
+                        <h3>Game Time</h3>
+                        <p>60-120 minutes</p>
+                    </div>
+                    <div class="spec">
+                        <h3>Complexity</h3>
+                        <p>Medium</p>
+                    </div>
+                </div>
+                
+                <div class="difficulty-modes">
+                    <h3>Difficulty Levels</h3>
+                    <div class="modes">
+                        <div class="mode">
+                            <h4>Beginner Mode</h4>
+                            <p>Pre-built WHYs, limited crises, guided card choices</p>
+                        </div>
+                        <div class="mode">
+                            <h4>Standard Mode</h4>
+                            <p>Build full WHY, full deck use, balanced crises</p>
+                        </div>
+                        <div class="mode">
+                            <h4>Expert CEO Mode</h4>
+                            <p>Dynamic market, forced WHY pivots, crisis chains</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="board" class="board-section">
+                <h2>Game Board</h2>
+                <div class="board-container">
+                    <!-- Board will be loaded from board/game-board.html -->
+                    <div id="board-display"></div>
+                </div>
+            </section>
+
+            <section id="cards" class="cards-section">
+                <h2>Card System</h2>
+                <div class="card-navigation">
+                    <button class="card-nav-btn active" data-card-type="why">WHY Cards</button>
+                    <button class="card-nav-btn" data-card-type="how">HOW Cards</button>
+                    <button class="card-nav-btn" data-card-type="what">WHAT Cards</button>
+                    <button class="card-nav-btn" data-card-type="crisis">Crisis Cards</button>
+                    <button class="card-nav-btn" data-card-type="opportunity">Opportunity Cards</button>
+                    <button class="card-nav-btn" data-card-type="pivot">Pivot Cards</button>
+                </div>
+                <div class="card-display">
+                    <!-- Card content will be loaded dynamically -->
+                    <div id="card-container"></div>
+                </div>
+            </section>
+            
+            <section id="rules" class="rules-section">
+                <h2>Game Rules</h2>
+                <div class="rules-tabs">
+                    <button class="rule-tab active" data-rule="overview">Overview</button>
+                    <button class="rule-tab" data-rule="setup">Setup</button>
+                    <button class="rule-tab" data-rule="gameplay">Gameplay</button>
+                    <button class="rule-tab" data-rule="scoring">Scoring</button>
+                    <button class="rule-tab" data-rule="advanced">Advanced Rules</button>
+                </div>
+                <div class="rules-content">
+                    <!-- Rules content will be loaded dynamically -->
+                    <div id="rules-container"></div>
+                </div>
+            </section>
+            
+            <section id="simulation" class="simulation-section">
+                <h2>Game Simulation</h2>
+                <p>Experience a sample gameplay from one player's perspective.</p>
+                <div class="simulation-container">
+                    <!-- Simulation content will be loaded dynamically -->
+                    <div id="simulation-container"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Golden Circle: Purpose to Impact Board Game</p>
+            <p>Based on Simon Sinek's "Start with Why" philosophy</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/card-viewer.js"></script>
+    <script src="js/game-simulation.js"></script>
+</body>
+</html>

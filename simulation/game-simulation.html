@@ -1,0 +1,281 @@
+<!-- Golden Circle: Purpose to Impact - Game Simulation -->
+<div class="simulation-wrapper">
+    <div class="simulation-header">
+        <h3>Experience the Game: Sarah's Journey</h3>
+        <p>Follow a sample gameplay from one player's perspective over 5 rounds. See how the game mechanics work together and learn how to navigate strategic decisions, crises, and alignment challenges.</p>
+    </div>
+    
+    <!-- Simulation Navigation -->
+    <div class="simulation-nav">
+        <div class="step-indicators">
+            <div class="step-indicator active" data-step="0">Setup</div>
+            <div class="step-indicator" data-step="1">Round 1</div>
+            <div class="step-indicator" data-step="2">Round 2</div>
+            <div class="step-indicator" data-step="3">Round 3</div>
+            <div class="step-indicator" data-step="4">Round 4</div>
+            <div class="step-indicator" data-step="5">Round 5</div>
+            <div class="step-indicator" data-step="6">Scoring</div>
+            <div class="step-indicator" data-step="7">Analysis</div>
+            <div class="step-indicator" data-step="8">Strategy</div>
+            <div class="step-indicator" data-step="9">Lessons</div>
+        </div>
+        
+        <div class="simulation-controls">
+            <button id="sim-prev" class="sim-btn"><span class="arrow">←</span> Previous</button>
+            <button id="sim-reset" class="sim-btn">Reset</button>
+            <button id="sim-next" class="sim-btn">Next <span class="arrow">→</span></button>
+        </div>
+    </div>
+    
+    <!-- Simulation Content -->
+    <div class="simulation-content">
+        <div class="sim-columns">
+            <!-- Left Column: Game State -->
+            <div class="sim-column state-column">
+                <div class="sim-board-container">
+                    <h4>Game Board</h4>
+                    <div id="sim-board" class="mini-board"></div>
+                </div>
+                
+                <div class="sim-stats">
+                    <h4>Player Status</h4>
+                    <div id="player-stats" class="stats-container"></div>
+                </div>
+                
+                <div class="sim-cards">
+                    <h4>Player Cards</h4>
+                    <div id="player-cards" class="cards-container"></div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Narrative -->
+            <div class="sim-column narrative-column">
+                <div class="narrative-container">
+                    <div id="simulation-narrative" class="narrative-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Additional simulation-specific styles */
+    .quote {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-left: 3px solid var(--secondary-color);
+        padding: var(--spacing-sm);
+        margin: var(--spacing-sm) 0;
+        font-style: italic;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .sim-columns {
+            flex-direction: column;
+        }
+        
+        .state-column, .narrative-column {
+            flex: 1;
+        }
+        
+        .step-indicator {
+            font-size: 0.7rem;
+            padding: 2px 4px;
+        }
+    }
+</style>
+simulation-wrapper {
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--card-shadow);
+        overflow: hidden;
+    }
+    
+    .simulation-header {
+        padding: var(--spacing-md);
+        background-color: var(--primary-light);
+        color: white;
+    }
+    
+    .simulation-nav {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        background-color: rgba(0, 0, 0, 0.03);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .step-indicators {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .step-indicator {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .step-indicator.active {
+        background-color: var(--secondary-color);
+        color: white;
+    }
+    
+    .simulation-controls {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+    
+    .sim-btn {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .arrow {
+        font-size: 1.2rem;
+    }
+    
+    .sim-columns {
+        display: flex;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+    
+    .sim-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .state-column {
+        flex: 0.4;
+    }
+    
+    .narrative-column {
+        flex: 0.6;
+    }
+    
+    .mini-board {
+        aspect-ratio: 1/1;
+        background-color: var(--primary-light);
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .stats-container, .cards-container, .narrative-container {
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-md);
+    }
+    
+    .narrative-content {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+    
+    .stat-group {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .stat-row {
+        display: flex;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .stat {
+        flex: 1;
+        background-color: rgba(0, 0, 0, 0.03);
+        padding: var(--spacing-xs);
+        border-radius: var(--border-radius);
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+    .stat-status {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 10px;
+        background-color: rgba(76, 175, 80, 0.2);
+        display: inline-block;
+    }
+    
+    .card-section {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .mini-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .mini-card {
+        width: 100%;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .mini-card-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2px 6px;
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    
+    .why-card .mini-card-header {
+        background-color: #2196f3;
+    }
+    
+    .how-card .mini-card-header {
+        background-color: #4caf50;
+    }
+    
+    .what-card .mini-card-header {
+        background-color: #ff9800;
+    }
+    
+    .mini-card-content {
+        padding: 4px 6px;
+    }
+    
+    .mini-card-title {
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+    
+    .mini-card-level, .mini-card-type {
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+    }
+    
+    .empty-cards {
+        padding: var(--spacing-sm);
+        color: var(--text-secondary);
+        font-style: italic;
+        font-size: 0.9rem;
+    }
+    
+    .

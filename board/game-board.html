@@ -1,0 +1,221 @@
+<!-- Golden Circle: Purpose to Impact - Game Board -->
+<div class="board-container">
+    <div class="game-board">
+        <!-- Zones -->
+        <div class="zone zone-startup" id="zone-startup"></div>
+        <div class="zone zone-growth" id="zone-growth"></div>
+        <div class="zone zone-challenge" id="zone-challenge"></div>
+        <div class="zone zone-expansion" id="zone-expansion"></div>
+        <div class="zone zone-legacy" id="zone-legacy"></div>
+        
+        <!-- Golden Circle Center -->
+        <div class="golden-center">
+            <span>Purpose Fulfilled</span>
+        </div>
+        
+        <!-- SVG for spiral path -->
+        <svg id="spiral-svg" class="game-path" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"></svg>
+        
+        <!-- Game Spaces -->
+        <!-- STARTUP Zone (Spaces 1-8) -->
+        <div class="space milestone" id="space-1" data-space-type="milestone">
+            1
+            <span>Inspiration Point (Start)</span>
+        </div>
+        <div class="space why-space" id="space-2" data-space-type="why">
+            2
+            <span>WHY Space</span>
+        </div>
+        <div class="space how-space" id="space-3" data-space-type="how">
+            3
+            <span>HOW Space</span>
+        </div>
+        <div class="space why-space" id="space-4" data-space-type="why">
+            4
+            <span>WHY Space</span>
+        </div>
+        <div class="space what-space" id="space-5" data-space-type="what">
+            5
+            <span>WHAT Space</span>
+        </div>
+        <div class="space market-space" id="space-6" data-space-type="market">
+            6
+            <span>Market Space</span>
+        </div>
+        <div class="space crisis-space" id="space-7" data-space-type="crisis">
+            7
+            <span>Crisis Space</span>
+        </div>
+        <div class="space how-space" id="space-8" data-space-type="how">
+            8
+            <span>HOW Space</span>
+        </div>
+        
+        <!-- GROWTH Zone (Spaces 9-16) -->
+        <div class="space market-space" id="space-9" data-space-type="market">
+            9
+            <span>Market Space</span>
+        </div>
+        <div class="space what-space" id="space-10" data-space-type="what">
+            10
+            <span>WHAT Space</span>
+        </div>
+        <div class="space milestone" id="space-11" data-space-type="milestone">
+            11
+            <span>Vision Launch (Milestone)</span>
+        </div>
+        <div class="space why-space" id="space-12" data-space-type="why">
+            12
+            <span>WHY Space</span>
+        </div>
+        <div class="space how-space" id="space-13" data-space-type="how">
+            13
+            <span>HOW Space</span>
+        </div>
+        <div class="space market-space" id="space-14" data-space-type="market">
+            14
+            <span>Market Space</span>
+        </div>
+        <div class="space what-space" id="space-15" data-space-type="what">
+            15
+            <span>WHAT Space</span>
+        </div>
+        <div class="space how-space" id="space-16" data-space-type="how">
+            16
+            <span>HOW Space</span>
+        </div>
+        
+        <!-- CHALLENGE Zone (Spaces 17-24) -->
+        <div class="space crisis-space" id="space-17" data-space-type="crisis">
+            17
+            <span>Crisis Space</span>
+        </div>
+        <div class="space why-space" id="space-18" data-space-type="why">
+            18
+            <span>WHY Space</span>
+        </div>
+        <div class="space what-space" id="space-19" data-space-type="what">
+            19
+            <span>WHAT Space</span>
+        </div>
+        <div class="space crisis-space" id="space-20" data-space-type="crisis">
+            20
+            <span>Crisis Space</span>
+        </div>
+        <div class="space milestone" id="space-21" data-space-type="milestone">
+            21
+            <span>Market Turbulence (Milestone)</span>
+        </div>
+        <div class="space how-space" id="space-22" data-space-type="how">
+            22
+            <span>HOW Space</span>
+        </div>
+        <div class="space market-space" id="space-23" data-space-type="market">
+            23
+            <span>Market Space</span>
+        </div>
+        <div class="space what-space" id="space-24" data-space-type="what">
+            24
+            <span>WHAT Space</span>
+        </div>
+        
+        <!-- EXPANSION Zone (Spaces 25-32) -->
+        <div class="space how-space" id="space-25" data-space-type="how">
+            25
+            <span>HOW Space</span>
+        </div>
+        <div class="space market-space" id="space-26" data-space-type="market">
+            26
+            <span>Market Space</span>
+        </div>
+        <div class="space crisis-space" id="space-27" data-space-type="crisis">
+            27
+            <span>Crisis Space</span>
+        </div>
+        <div class="space why-space" id="space-28" data-space-type="why">
+            28
+            <span>WHY Space</span>
+        </div>
+        <div class="space what-space" id="space-29" data-space-type="what">
+            29
+            <span>WHAT Space</span>
+        </div>
+        <div class="space how-space" id="space-30" data-space-type="how">
+            30
+            <span>HOW Space</span>
+        </div>
+        <div class="space milestone" id="space-31" data-space-type="milestone">
+            31
+            <span>Breakthrough Strategy (Milestone)</span>
+        </div>
+        <div class="space market-space" id="space-32" data-space-type="market">
+            32
+            <span>Market Space</span>
+        </div>
+        
+        <!-- LEGACY Zone (Spaces 33-40) -->
+        <div class="space what-space" id="space-33" data-space-type="what">
+            33
+            <span>WHAT Space</span>
+        </div>
+        <div class="space crisis-space" id="space-34" data-space-type="crisis">
+            34
+            <span>Crisis Space</span>
+        </div>
+        <div class="space how-space" id="space-35" data-space-type="how">
+            35
+            <span>HOW Space</span>
+        </div>
+        <div class="space market-space" id="space-36" data-space-type="market">
+            36
+            <span>Market Space</span>
+        </div>
+        <div class="space why-space" id="space-37" data-space-type="why">
+            37
+            <span>WHY Space</span>
+        </div>
+        <div class="space what-space" id="space-38" data-space-type="what">
+            38
+            <span>WHAT Space</span>
+        </div>
+        <div class="space crisis-space" id="space-39" data-space-type="crisis">
+            39
+            <span>Crisis Space</span>
+        </div>
+        <div class="space milestone" id="space-40" data-space-type="milestone">
+            40
+            <span>Purpose Realization (Milestone)</span>
+        </div>
+    </div>
+    
+    <!-- Board Legend -->
+    <div class="board-legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--startup-color);"></div>
+            <span>STARTUP Zone</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--growth-color);"></div>
+            <span>GROWTH Zone</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--challenge-color);"></div>
+            <span>CHALLENGE Zone</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--expansion-color);"></div>
+            <span>EXPANSION Zone</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: var(--legacy-color);"></div>
+            <span>LEGACY Zone</span>
+        </div>
+    </div>
+    
+    <!-- Board Controls -->
+    <div class="board-controls">
+        <button id="zoom-in">Zoom In</button>
+        <button id="zoom-out">Zoom Out</button>
+        <button id="reset-board">Reset View</button>
+    </div>
+</div>
